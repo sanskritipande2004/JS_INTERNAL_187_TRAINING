@@ -1,0 +1,23 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>First DOM with JS</title>
+</head>
+<body>
+    <h1 id="hid1">First Heading</h1>
+    <h2 id="hid2">This is second Heading</h2>
+    <Button onclick="fun">Click</Button>
+    <Button onclick="fun2">Click button 2</Button>
+    <script>
+        function fun()
+        {
+            document.getElementById("hid1").innerHTML="new value";
+        }
+        function fun2()
+        {
+            document.getElementById("hid2").innerHTML="second new value";
+        }
+    </script>
+</body>
+</html>
