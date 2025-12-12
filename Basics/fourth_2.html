@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Fix</title>
+</head>
+<body>
+
+    <form id="my_Form">
+        <input type="text" placeholder="Enter your name" id="text1">
+        <input type="password" placeholder="Enter Your password" id="pass1">
+        <button id="bt1" type="submit">Submit</button>
+        <p style="color:red" id="para"></p>
+    </form>
+
+    <script>
+        document.getElementById("my_Form").addEventListener("submit", function(event) {
+            event.preventDefault();
+
+            let n = document.getElementById("text1").value.trim();
+            let error = document.getElementById("para");
+
+            if (n == "") {
+                error.style.color = "red";
+                error.innerHTML = "Value cannot be empty";
+            } 
+            else {
+                error.style.color = "green";
+                error.innerHTML = "Value submitted successfully";
+            }
+        });
+    </script>
+
+</body>
+</html>
