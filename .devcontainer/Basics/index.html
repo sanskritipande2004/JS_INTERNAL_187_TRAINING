@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -7,17 +8,20 @@
 <body>
     <h1 id="hid1">First Heading</h1>
     <h2 id="hid2">This is second Heading</h2>
-    <Button onclick="fun">Click</Button>
-    <Button onclick="fun2">Click button 2</Button>
+
+    <button id="bt1">Click button 1 to change text</button>
+    <button id="bt2">Click button 2 to change colour</button>
+
     <script>
-        function fun()
-        {
-            document.getElementById("hid1").innerHTML="new value";
-        }
-        function fun2()
-        {
-            document.getElementById("hid2").innerHTML="second new value";
-        }
+        document.getElementById("bt1").addEventListener("click", function() {
+            document.getElementById("hid1").innerHTML = "Updated Heading 1";
+            document.getElementById("hid2").innerHTML = "Updated Heading 2";
+        });
+
+        document.getElementById("bt2").addEventListener("click", function() {
+            document.getElementById("hid1").style.color = "blue";
+            document.getElementById("hid2").style.color = "red";
+        });
     </script>
 </body>
 </html>
