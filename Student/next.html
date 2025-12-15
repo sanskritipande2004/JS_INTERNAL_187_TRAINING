@@ -1,0 +1,17 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Next Page</title>
+</head>
+<body>
+    <h1 id="hid1">This is next page</h1>
+</body>
+
+<script>
+    let param = new URLSearchParams(window.location.search);
+    let ns = param.get("first");
+
+    document.getElementById("hid1").innerHTML = `Welcome ! ${ns}`;
+</script>
+</html>

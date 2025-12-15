@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>HCL Assessment Demo Page</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        .header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background-color: #0047AB;
+            color: white;
+            padding: 10px 20px;
+        }
+
+        .header img {
+            height: 50px;
+        }
+
+        .header h1 {
+            margin: 0;
+            font-size: 28px;
+        }
+
+        .container {
+            display: flex;
+            height: calc(100vh - 80px);
+        }
+
+        .menu {
+            width: 25%;
+            background-color: #f2f2f2;
+            padding: 20px;
+        }
+
+        .menu button {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        .content {
+            width: 45%;
+            padding: 20px;
+            border-left: 1px solid #ccc;
+            border-right: 1px solid #ccc;
+        }
+
+        .notice {
+            border: 1px solid #000;
+            padding: 10px;
+            margin-bottom: 20px;
+            font-weight: bold;
+        }
+
+        .scroll-box {
+            height: 200px;
+            border: 1px solid #000;
+            overflow-y: scroll;
+            padding: 10px;
+        }
+
+        .login {
+            width: 30%;
+            padding: 20px;
+        }
+
+        .login input {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 10px;
+        }
+
+        .login button {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 8px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header">
+        <img src="image1.avif" alt="Left Logo">
+
+        <h1>HCL Assessment Demo Page</h1>
+
+        <img src="image2.jpeg" alt="Right Logo">
+    </div>
+
+    <div class="container">
+
+        <div class="menu">
+            <button>Gallery</button>
+            <button>Pictures</button>
+            <button>About HCL</button>
+        </div>
+
+        <div class="content">
+
+            <div class="scroll-box">
+                <p>Welcome to HCL Technologies.</p>
+                <p>Assessment schedules will be updated here.</p>
+                <p>Check regularly for notifications.</p>
+            </div>
+        </div>
+
+        <div class="login">
+            <form action="next.html" method="get">
+            <h3>Login</h3>
+            <input type="text" placeholder="Username" name="first">
+            <input type="password" placeholder="Password">
+            <button type="submit">Submit</button>
+            </form>
+        </div>
+
+    </div>
+
+</body>
+</html>
