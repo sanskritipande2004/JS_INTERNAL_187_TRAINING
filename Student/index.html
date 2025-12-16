@@ -114,10 +114,10 @@
         </div>
 
         <div class="login">
-            <form action="next.html" method="get">
+            <form action="next.html" method="get" id="form1">
             <h3>Login</h3>
-            <input type="text" placeholder="Username" name="first">
-            <input type="password" placeholder="Password">
+            <input type="text" placeholder="Username" name="first" id="user">
+            <input type="password" placeholder="Password" id="pass">
             <button type="submit">Submit</button>
             </form>
         </div>
@@ -125,4 +125,28 @@
     </div>
 
 </body>
+<script>
+    document.getElementById("form1").addEventListener("submit",function(e)
+{
+   e.preventDefault();
+   let uname=document.getElementById("user").value.trim();
+   let pass=document.getElementById("pass").value.trim();
+   if(uname==="" && pass==="")
+   {
+    alert("Username and password cannot be empty");
+   }
+   else if(uname==="")
+   {
+    alert("Username cannot be empty");
+   }
+   else if(pass==="")
+   {
+    alert("Password cannot be empty");
+   }
+   else{
+    alert("Login successful");
+    this.submit();
+   }
+});
+</script>
 </html>
