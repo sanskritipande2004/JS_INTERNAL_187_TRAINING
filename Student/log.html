@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>New User Registration</title>
+
+    <script>
+        function validateReg() {
+            let name = document.getElementById("name").value;
+            let email = document.getElementById("email").value;
+            let pass = document.getElementById("pass").value;
+            let cpass = document.getElementById("cpass").value;
+            let msg = document.getElementById("msg");
+
+            msg.innerHTML = "";
+
+            if (name == "") {
+                msg.innerHTML = "❌ Name is required";
+                msg.style.color = "red";
+                return false;
+            }
+
+            if (email == "") {
+                msg.innerHTML = "❌ Email is required";
+                msg.style.color = "red";
+                return false;
+            }
+
+            if (pass == "") {
+                msg.innerHTML = "❌ Password is required";
+                msg.style.color = "red";
+                return false;
+            }
+
+            if (pass != cpass) {
+                msg.innerHTML = "❌ Passwords do not match";
+                msg.style.color = "red";
+                return false;
+            }
+
+            msg.innerHTML = "✅ Registration successful";
+            msg.style.color = "green";
+            return true;
+        }
+    </script>
+</head>
+
+<body>
+
+    <center>
+        <h1 style="color:green;">New User Registration</h1>
+    </center>
+
+    <hr color="green">
+
+    <div style="width:40%; margin:auto; background-color:lightyellow; padding:20px;">
+
+        <form onsubmit="return validateReg();">
+
+            <table cellpadding="8" align="center">
+
+                <tr>
+                    <td>Full Name</td>
+                    <td><input type="text" id="name" placeholder="Enter your name"></td>
+                </tr>
+
+                <tr>
+                    <td>Email</td>
+                    <td><input type="email" id="email" placeholder="Enter email"></td>
+                </tr>
+
+                <tr>
+                    <td>Password</td>
+                    <td><input type="password" id="pass" placeholder="Enter password"></td>
+                </tr>
+
+                <tr>
+                    <td>Confirm Password</td>
+                    <td><input type="password" id="cpass" placeholder="Confirm password"></td>
+                </tr>
+
+                <tr>
+                    <td colspan="2" align="center">
+                        <p id="msg"></p>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td colspan="2" align="center">
+                        <button type="submit">Register</button>
+                        <button type="reset">Clear</button>
+                    </td>
+                </tr>
+
+            </table>
+
+        </form>
+
+        <center>
+            <br>
+            <a href="log.html">Already have an account? Login</a>
+        </center>
+
+    </div>
+
+</body>
+</html>
