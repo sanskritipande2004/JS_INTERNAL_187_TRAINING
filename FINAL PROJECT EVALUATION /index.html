@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>STUDENT REGISTRATION PROJECT</title>
+
+<style>
+body {
+    margin: 0;
+    font-family: "Segoe UI", Arial, sans-serif;
+    background-color: #ffffff;
+    color: #333;
+}
+
+h1 {
+    text-align: center;
+    margin: 25px 0 10px;
+    font-size: 34px;
+    letter-spacing: 0.5px;
+}
+
+/* ---------- NAVIGATION ---------- */
+.nav {
+    border-top: 2px solid green;
+    border-bottom: 2px solid green;
+    padding: 10px 0;
+    text-align: center;
+}
+
+.nav a {
+    text-decoration: none;
+    color: #000;
+    font-weight: 600;
+    margin: 0 20px;
+}
+
+.nav a:hover {
+    color: green;
+}
+
+/* ---------- LAYOUT ---------- */
+.container {
+    display: flex;
+    height: calc(100vh - 140px);
+}
+
+/* ---------- LEFT PANEL ---------- */
+.left-panel {
+    width: 33%;
+    background: linear-gradient(160deg, #eef2ff, #f0fdf4);
+    padding: 25px;
+    border-right: 1px solid #cfd8dc;
+}
+
+.left-panel h3 {
+    margin-top: 0;
+    color: #1e3a8a;
+}
+
+.subtitle {
+    font-size: 14px;
+    color: #475569;
+    margin-bottom: 18px;
+}
+
+.left-panel ul {
+    list-style: none;
+    padding: 0;
+}
+
+.left-panel li {
+    padding-left: 22px;
+    margin-bottom: 12px;
+    position: relative;
+    font-size: 14px;
+}
+
+.left-panel li::before {
+    content: "✔";
+    position: absolute;
+    left: 0;
+    color: #22c55e;
+    font-weight: bold;
+}
+
+.note-box {
+    margin-top: 20px;
+    padding: 12px;
+    background: #e0f2fe;
+    border-left: 4px solid #0284c7;
+    border-radius: 6px;
+    font-size: 13px;
+}
+
+/* ---------- CENTER PANEL ---------- */
+.center {
+    width: 34%;
+    background-color: #eaf3ff;
+    padding: 25px;
+    text-align: center;
+    border-right: 1px solid #ddd;
+}
+
+.center h2 {
+    margin-bottom: 15px;
+    text-decoration: underline;
+}
+
+.notice-box {
+    background: white;
+    padding: 15px;
+    border-radius: 6px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    text-align: left;
+    font-size: 15px;
+}
+
+/* ---------- RIGHT PANEL ---------- */
+.right {
+    width: 33%;
+    background-color: #eaf6ea;
+    padding: 25px;
+}
+
+.login-box {
+    background: white;
+    padding: 20px;
+    border-radius: 6px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.login-box h3 {
+    text-align: center;
+}
+
+.login-box label {
+    font-weight: 600;
+    display: block;
+}
+
+.login-box input {
+    width: 100%;
+    padding: 6px;
+    margin: 6px 0 5px;
+}
+
+.login-box button {
+    padding: 6px 14px;
+    margin-top: 8px;
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+.signup {
+    display: block;
+    text-align: center;
+    margin-top: 10px;
+    color: purple;
+    text-decoration: underline;
+}
+
+#userError, #passError {
+    font-size: 12px;
+    color: red;
+    display: block;
+    margin-bottom: 8px;
+}
+
+#loginResult {
+    margin-top: 15px;
+    font-size: 14px;
+}
+</style>
+</head>
+
+<body>
+
+<h1>STUDENT REGISTRATION PROJECT</h1>
+
+<div class="nav">
+    <a href="#">Home</a>
+    <a href="#">Gallery</a>
+    <a href="#">About Us</a>
+    <a href="#">Courses</a>
+    <a href="#">Notices</a>
+    <a href="#">Contact</a>
+</div>
+
+<div class="container">
+
+    <!-- LEFT -->
+    <div class="left-panel">
+        <h3>Why Register?</h3>
+        <p class="subtitle">Get access to premium learning resources</p>
+        <ul>
+            <li>Certified Courses</li>
+            <li>Expert Mentorship</li>
+            <li>Hands-on Projects</li>
+            <li>Placement Assistance</li>
+        </ul>
+        <div class="note-box">📌 Limited seats available</div>
+    </div>
+
+    <!-- CENTER -->
+    <div class="center">
+        <h2>IMPORTANT NOTICE</h2>
+        <div class="notice-box">
+            <p><b>Student Registration Notice:</b></p>
+            <p>The online registration process for the upcoming academic session has commenced.</p>
+            <p>Students must complete registration with correct personal and academic details.</p>
+            <p>Incomplete applications may be rejected.</p>
+            <p>Contact the administration office for assistance.</p>
+        </div>
+    </div>
+
+    <!-- RIGHT -->
+    <div class="right">
+        <div class="login-box">
+            <h3>LOGIN</h3>
+
+            <form id="loginForm">
+                <label>User Name</label>
+                <input type="text" id="username" placeholder="Enter your username">
+                <span id="userError"></span>
+
+                <label>Password</label>
+                <input type="password" id="password" placeholder="Enter your password">
+                <span id="passError"></span>
+
+                <button type="submit">Submit</button>
+                <button type="button" onclick="clearLogin()">Cancel</button>
+            </form>
+
+            <a href="new.html" class="signup">New User or Signup</a>
+            <div id="loginResult"></div>
+        </div>
+    </div>
+
+</div>
+
+<script>
+document.getElementById("loginForm").addEventListener("submit", function(e) {
+    e.preventDefault();
+
+    let username = document.getElementById("username").value.trim();
+    let password = document.getElementById("password").value.trim();
+
+    let userError = document.getElementById("userError");
+    let passError = document.getElementById("passError");
+    let result = document.getElementById("loginResult");
+
+    userError.innerHTML = "";
+    passError.innerHTML = "";
+    result.innerHTML = "";
+
+    let valid = true;
+
+    if (username === "") {
+        userError.innerHTML = "Username is required";
+        valid = false;
+    }
+
+    if (password === "") {
+        passError.innerHTML = "Password is required";
+        valid = false;
+    }
+
+    if (valid) {
+        result.innerHTML =
+            "<p style='color:green; font-weight:600;'>✔ Login Successful<br>Welcome, " +
+            username +
+            "</p>";
+    }
+});
+
+function clearLogin() {
+    document.getElementById("username").value = "";
+    document.getElementById("password").value = "";
+    document.getElementById("userError").innerHTML = "";
+    document.getElementById("passError").innerHTML = "";
+    document.getElementById("loginResult").innerHTML = "";
+}
+</script>
+
+</body>
+</html>
